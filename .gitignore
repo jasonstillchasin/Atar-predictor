@@ -1,0 +1,12 @@
+# Executed notebooks embed UAC figures in their outputs; regenerate with scripts/build_notebooks.py
+notebooks/*.ipynb
+# Saved student profiles from the web app are personal data
+students/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.claude/

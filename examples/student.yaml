@@ -1,0 +1,73 @@
+# Example student profile. Course names must match UAC Table A3 (e.g. "Mathematics Advanced").
+#
+# Per task: weight is % of that year's internal assessment. mark can be a % (out_of defaults
+# to 100) or a raw score with out_of. Leave mark out for tasks not yet sat.
+# Optional per task: rank / rank_of, or cohort_mean / cohort_sd (same scale as mark).
+# Per course: cohort_size, and rank if you know your current overall course rank.
+
+name: Example student
+# cohort_strength: above   # below | average | above | selective; leave out if unsure
+
+courses:
+  - name: English Advanced
+    cohort_size: 140
+    year11:
+      - {name: Reading to Write, mark: 16, out_of: 20, weight: 30}
+      - {name: Narratives That Shape Our World, mark: 78, weight: 30}
+      - {name: Yearly Exam, mark: 74, weight: 40}
+    year12:
+      - {name: Common Module Essay, mark: 21, out_of: 25, weight: 25, rank: 18, rank_of: 140}
+      - {name: Module B Critical Response, mark: 80, weight: 25, rank: 22, rank_of: 140}
+      - {name: Module C Portfolio, mark: 84, weight: 20, rank: 15, rank_of: 140}
+      - {name: Trial HSC, mark: 79, weight: 30, rank: 20, rank_of: 140}
+
+  - name: English Extension 1
+    cohort_size: 24
+    rank: 9
+    year12:
+      - {name: Critical Response, mark: 38, out_of: 50, weight: 40}
+      - {name: Trial HSC, mark: 37, out_of: 50, weight: 60}
+
+  - name: Mathematics Advanced
+    cohort_size: 110
+    rank: 12
+    year11:
+      - {name: Investigation, mark: 85, weight: 30}
+      - {name: Half-Yearly, mark: 82, weight: 30}
+      - {name: Yearly Exam, mark: 88, weight: 40}
+    year12:
+      - {name: Assignment, mark: 90, weight: 30}
+      - {name: Half-Yearly, mark: 86, weight: 30}
+      - {name: Trial HSC, mark: 84, weight: 40}
+
+  - name: Mathematics Extension 1
+    cohort_size: 45
+    year12:
+      - {name: Investigation, mark: 34, out_of: 50, weight: 30, cohort_mean: 30, cohort_sd: 7}
+      - {name: Half-Yearly, mark: 58, out_of: 70, weight: 30, cohort_mean: 49, cohort_sd: 10}
+      - {name: Trial HSC, mark: 71, weight: 40, cohort_mean: 64, cohort_sd: 13}
+
+  - name: Physics
+    cohort_size: 60
+    rank: 7
+    year11:
+      - {name: Depth Study, mark: 80, weight: 40}
+      - {name: Yearly Exam, mark: 77, weight: 60}
+    year12:
+      - {name: Depth Study, mark: 88, weight: 30}
+      - {name: Half-Yearly, mark: 81, weight: 30}
+      - {name: Trial HSC, weight: 40}   # not yet sat
+
+  - name: Chemistry
+    year12:
+      - {name: Practical Test, mark: 75, weight: 30}
+      - {name: Half-Yearly, mark: 72, weight: 30}
+      - {name: Trial HSC, mark: 70, weight: 40}
+
+  - name: Economics
+    cohort_size: 50
+    rank: 5
+    year12:
+      - {name: Research Task, mark: 86, weight: 30}
+      - {name: Half-Yearly, mark: 83, weight: 30}
+      - {name: Trial HSC, mark: 85, weight: 40}

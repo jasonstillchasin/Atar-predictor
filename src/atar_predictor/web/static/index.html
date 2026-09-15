@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATAR Workbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">A<sup>+</sup></span>
+        <div>
+          <strong>ATAR Workbook</strong>
+          <small>NSW HSC estimator</small>
+        </div>
+      </div>
+
+      <button id="new-student" class="btn btn-primary btn-block">+ New student</button>
+      <input id="student-search" class="search" type="search" placeholder="Search students" aria-label="Search students">
+      <nav id="student-list" class="student-list" aria-label="Saved students"></nav>
+      <p class="sidebar-note">Saved on this computer in <code>students/</code></p>
+    </aside>
+
+    <main class="workbook">
+      <header class="topbar">
+        <div class="student-head">
+          <input id="student-name" class="student-name" placeholder="Student name" aria-label="Student name" autocomplete="off">
+          <label class="field-inline">
+            <span>School cohort</span>
+            <select id="cohort-strength">
+              <option value="">Not sure</option>
+              <option value="below">Below average</option>
+              <option value="average">About average</option>
+              <option value="above">Above average</option>
+              <option value="selective">Selective / top school</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions">
+          <span id="save-status" class="save-status" aria-live="polite"></span>
+          <button id="duplicate-student" class="btn btn-ghost">Duplicate</button>
+          <button id="delete-student" class="btn btn-ghost btn-danger">Delete</button>
+          <button id="save-student" class="btn btn-primary" title="Save (Ctrl/⌘ S)">Save</button>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <label class="toggle">
+          <input type="checkbox" id="show-advanced">
+          <span>Show task ranks &amp; cohort stats</span>
+        </label>
+        <span class="hint">Weight = the task’s % of that year. Leave the mark blank for tasks not yet sat.</span>
+      </div>
+
+      <section id="averages" class="report-card" aria-labelledby="averages-title"></section>
+
+      <section id="courses" class="courses" aria-label="Courses"></section>
+      <button id="add-course" class="add-course">+ Add course</button>
+      <datalist id="course-options"></datalist>
+    </main>
+
+    <aside id="results" class="results" aria-live="polite"></aside>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>

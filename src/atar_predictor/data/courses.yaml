@@ -1,0 +1,37 @@
+# Course rules for the ATAR calculation. Names match UAC Table A3 (2025 spelling).
+#
+# Defaults applied in code (courses.py) for any course not listed here:
+#   units: 1 if the name contains "Extension", otherwise 2
+#   english: false
+#   subject: the course name
+#
+# Sources: UAC "How your ATAR is calculated"; UAC Report on the Scaling of the 2025 NSW HSC.
+#   - English Extension 1/2 are English units and can fill the best-2-units-of-English requirement.
+#   - Mathematics Extension 1 is 1 unit, or 2 units (mark doubled) for Mathematics Extension 2 students.
+#   - Mathematics Extension 2 is 2 units.
+
+courses:
+  English Advanced: {english: true, subject: English}
+  English Standard: {english: true, subject: English}
+  English Studies Exam: {english: true, subject: English}
+  English EAL/D: {english: true, subject: English}
+  English Extension 1: {units: 1, english: true, subject: English}
+  English Extension 2: {units: 1, english: true, subject: English}
+
+  Mathematics Standard 1 Exam: {subject: Mathematics}
+  Mathematics Standard 2: {subject: Mathematics}
+  Mathematics Advanced: {subject: Mathematics}
+  Mathematics Extension 1: {units: 1, units_with: {Mathematics Extension 2: 2}, subject: Mathematics}
+  Mathematics Extension 2: {units: 2, subject: Mathematics}
+
+  Studies of Religion I: {units: 1, subject: Studies of Religion}
+  Studies of Religion II: {subject: Studies of Religion}
+  Music 1: {subject: Music}
+  Music 2: {subject: Music}
+  Music Extension: {units: 1, subject: Music}
+
+# Courses renamed or replaced by new syllabuses. Scaling history from the predecessor
+# is used (with extra uncertainty) when the new course has too few years of data.
+predecessors:
+  Enterprise Computing: Information Processes & Technology
+  Software Engineering: Software Design & Development
